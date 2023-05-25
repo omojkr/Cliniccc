@@ -1,0 +1,73 @@
+table {
+    table-layout: fixed;
+    border: 2px solid black;
+}
+
+tr.cal {
+    border: 2px solid black;
+    font-family: verdana;
+    color: black;
+}
+
+tbody {
+    border: 2px solid black;
+    font-family: verdana;
+    color: black;
+}
+
+    tbody.cal {
+        border: 2px solid black;
+        font-family: verdana;
+        color: black;
+    }
+
+thead. {
+    color: black;
+    font-family: verdana;
+    border: 2px solid black;
+}
+
+th.header {
+    color: black;
+    font-family: verdana;
+    border: 2px solid black;
+}
+
+td.cal {
+    width: 33%;
+    font-family: verdana;
+    border: 2px solid black;
+    color: black;
+}
+
+th.cal {
+    font-family: verdana;
+    border: 2px solid black;
+    color: black;
+}
+
+.today {
+    background-color: #FFF169;
+}
+
+.btn-danger {
+    font-size: .8rem;
+    width: 100%;
+    height: auto;
+    position: relative;
+    font-family: verdana;
+}
+
+.btn-success {
+    font-size: .8rem;
+    width: 100%;
+    height: auto;
+    position: relative;
+    font-family: verdana;
+}
+
+.container-fluid {
+    background-color: #F2F2F2;
+    color: black;
+    font-family: verdana;
+}
