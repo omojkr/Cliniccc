@@ -19,7 +19,7 @@ window.history.forward();
             rel="stylesheet">
 
      <!-- Custom styles for this template-->
-         <link href="login1.css" rel="stylesheet">
+         <link href="login.css" rel="stylesheet">
          
 </head>
 

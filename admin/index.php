@@ -60,40 +60,12 @@ window.history.forward();
             <hr class="sidebar-divider">
 
 
-
-            <!-- Nav Item - Dashboard Appointments -->
-            <li class="nav-item">
-                <a class="nav-link collapsed" href="#" data-target="#collapseTwo"
-                   aria-expanded="true" aria-controls="collapseTwo">
-                    <i class="fas fa-fw fa-calendar"></i>
-                    <span>Appointments</span>
-                </a>
-            </li>
-
-            <!-- Nav Item - Dashboard Doctor -->
-            <li class="nav-item">
-                <a class="nav-link collapsed" href="doctors.php" data-target="#collapseTwo"
-                   aria-expanded="true" aria-controls="collapseTwo">
-                    <i class="fas fa-fw fa-user-md"></i>
-                    <span>Doctors</span>
-                </a>
-            </li>
-
-            <!-- Nav Item - Dashboard Staffs -->
-            <li class="nav-item">
-                <a class="nav-link collapsed" href="staff.php" data-target="#collapseTwo"
-                   aria-expanded="true" aria-controls="collapseTwo">
-                    <i class="fas fa-fw fa-id-badge"></i>
-                    <span>Staffs</span>
-                </a>
-            </li>
-
             <!-- Nav Item - Dashboard Patients -->
             <li class="nav-item">
                 <a class="nav-link collapsed" href="patients.php" data-target="#collapseTwo"
                    aria-expanded="true" aria-controls="collapseTwo">
                     <i class="fas fa-fw fa-users"></i>
-                    <span>Patients</span>
+                    <span>Users</span>
                 </a>
             </li>
 
@@ -217,7 +189,7 @@ window.history.forward();
                             <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">                            
                                 <span class="mr-2 d-none d-lg-inline text-gray-600 small">
-                                Welcome, <?php echo $_SESSION['email'];?>
+                                <?php echo $_SESSION['email'];?>
                                 </span>
 
                                 <img class="img-profile rounded-circle"

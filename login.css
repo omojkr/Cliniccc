@@ -1,0 +1,142 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+img.logo {
+    float: right;
+}
+
+
+.hero {
+    height: 100%;
+    width: 100%;
+    background-image: url(bg.jpg);
+    background-position: center;
+    background-size: cover;
+    position: absolute;
+}
+
+.form-box {
+    width: 400px;
+    height: 540px;
+    position: relative;
+    margin: 4% auto;
+    background: #fff;
+    padding: 5px;
+}
+
+#btn {
+    top: 0;
+    left: 0;
+    position: absolute;
+    width: 105px;
+    height: 100%;
+    background: linear-gradient(to right, #a8e8b1, #8fae81);
+    border-radius: 30px;
+    transition: .5s;
+}
+
+#login.input-group {
+    top: 85px;
+    position: absolute;
+    width: 280px;
+    transition: .5s;
+}
+
+#regis.input-group {
+    top: 55px;
+    left: 55px;
+    position: absolute;
+    width: 280px;
+    transition: .5s;
+}
+
+
+.input-field {
+    width: 100%;
+    padding: 10px 0;
+    margin: 5px 0;
+    border-left: 0;
+    border-top: 0;
+    border-right: 0;
+    border-bottom: 1px;
+    outline: none;
+    background: transparent;
+}
+
+.submit-btn {
+    width: 85%;
+    padding: 10px 30px;
+    cursor: pointer;
+    display: block;
+    margin: auto;
+    background: linear-gradient(to right, #a8e8b1, #8fae81);
+    border: 0;
+    outline: none;
+    border-radius: 30px;
+}
+
+.chech-box {
+    margin: 13px 0px 0;
+}
+
+span {
+    color: #808080;
+    font-size: 14px;
+    bottom: 2px;
+    position: relative;
+}
+
+#login {
+    left: 50px;
+}
+
+#register {
+    left: 450px;
+}
+
+.notice {
+    color: #808080;
+    font-size: 14px;
+    bottom: 1px;
+    left: 45px;
+    position: relative;
+}
+
+.noticee {
+    color: #808080;
+    font-size: 16px;
+    bottom: 1px;
+    left: 48px;
+    position: relative;
+}
+
+.forms-box {
+    width: 800px;
+    height: 260px;
+    position: relative;
+    margin: 4% auto;
+    background: #fff;
+    padding: 5px;
+}
+
+.msg {
+    color: white;
+    font-size: 14px;
+    letter-spacing: 1.5px;
+    background-color: #cd5252;
+    border-radius: 4px;
+    height: 20px;
+    width: 20%;
+}
+
+.error {
+    color: white;
+    font-size: 14px;
+    letter-spacing: 1.5px;
+    background-color: #cd5252;
+    border-radius: 4px;
+    height: 20px;
+    width: 20%;
+}

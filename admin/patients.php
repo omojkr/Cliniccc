@@ -18,7 +18,7 @@ window.history.forward();
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Admin - Patients</title>
+    <title>Admin - Users</title>
 
     <!-- Custom fonts for this template-->
     <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -99,9 +99,45 @@ window.history.forward();
             background-color: #D23F3F;
             border-color: #e74a3b;
         
-        
         }
 
+        .buttonview {
+            display: inline-block;
+            font-weight: 400;
+            color: #fff;
+            text-align: center;
+            vertical-align: middle;            
+            background-color: #485AFA;
+            border: 1px solid #485AFA;
+            padding: .375rem .75rem;
+            font-size: 1rem;
+            line-height: 1.5;
+            border-radius: .35rem;
+            transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+            transition-duration: 0.15s, 0.15s, 0.15s, 0.15s;
+            transition-timing-function: ease-in-out, ease-in-out, ease-in-out, ease-in-out;
+            transition-delay: 0s, 0s, 0s, 0s;
+            transition-property: color, background-color, border-color, box-shadow;
+        }
+
+        .buttonview:hover {
+            color: #fff;
+            background-color: #1F2EB5;
+            border-color: #1F2EB5;
+        }
+
+       
+
+        th.cal{
+            width:100%;
+        }
+        
+
+       
+
+        
+
+        
     
     
     </style>
@@ -137,40 +173,12 @@ window.history.forward();
             <hr class="sidebar-divider">
 
 
-
-            <!-- Nav Item - Dashboard Appointments -->
-            <li class="nav-item">
-                <a class="nav-link collapsed" href="#" data-target="#collapseTwo"
-                   aria-expanded="true" aria-controls="collapseTwo">
-                    <i class="fas fa-fw fa-calendar"></i>
-                    <span>Appointments</span>
-                </a>
-            </li>
-
-            <!-- Nav Item - Dashboard Doctor -->
-            <li class="nav-item">
-                <a class="nav-link collapsed" href="doctors.php" data-target="#collapseTwo"
-                   aria-expanded="true" aria-controls="collapseTwo">
-                    <i class="fas fa-fw fa-user-md"></i>
-                    <span>Doctors</span>
-                </a>
-            </li>
-
-            <!-- Nav Item - Dashboard Staffs -->
-            <li class="nav-item">
-                <a class="nav-link collapsed" href="staff.php" data-target="#collapseTwo"
-                   aria-expanded="true" aria-controls="collapseTwo">
-                    <i class="fas fa-fw fa-id-badge"></i>
-                    <span>Staffs</span>
-                </a>
-            </li>
-
             <!-- Nav Item - Dashboard Patients -->
             <li class="nav-item">
                 <a class="nav-link collapsed" href="patients.php" data-target="#collapseTwo"
                    aria-expanded="true" aria-controls="collapseTwo">
                     <i class="fas fa-fw fa-users"></i>
-                    <span>Patients</span>
+                    <span>Users</span>
                 </a>
             </li>
 
@@ -294,7 +302,7 @@ window.history.forward();
                             <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">                            
                                 <span class="mr-2 d-none d-lg-inline text-gray-600 small">
-                                Welcome, <?php echo $_SESSION['username'];?>
+                                <?php echo $_SESSION['email'];?>
                                 </span>
 
                                 <img class="img-profile rounded-circle"
@@ -333,10 +341,13 @@ window.history.forward();
                     <!-- Table Content Row -->
                      <table class="table table-bordered">         
                             <tr class="cal">
-                              <th class="cal">#</th>
+                             
                               <th class="cal">Patient's Name</th>   
-                              <th class="cal">Phone Number</th>
                               <th class="cal">Email</th>
+                              <th class="cal">Contact Number</th>
+                              <th class="cal">Address</th>
+                              <th class="cal"></th>
+                             
                             </tr>
                         
                           <tbody class="cal">
@@ -344,24 +355,27 @@ window.history.forward();
                                 
                                 require('db.php');
 
-                                $query1=mysqli_query($con, "select * from users");
+                                $query1=mysqli_query($con, "select * from registered_users");
                                 while($row=mysqli_fetch_array($query1))
                                                         
                             ?>
                             <?php
-                                $query = "SELECT * FROM users";
+                                $query = "SELECT * FROM registered_users";
                                 $result = mysqli_query($con,$query);
                                 while($row = mysqli_fetch_array($result)){ 
                             ?>
                             <tr class="cal">
-                                <td class="cal"></td>
-                                <td class="cal"><?php echo $row['username']; ?></td>
-                                <td class="cal"><?php echo $row['phone_number']; ?></td>
+                              
+                                <td class="cal"><?php echo $row['firstName']; ?> <?php echo $row['middleInitial']; ?> <?php echo $row['lastName']; ?></td>                              
                                 <td class="cal"><?php echo $row['email']; ?></td>
+                                <td class="cal"><?php echo $row['contact_number']; ?></td>
+                               
+                                <td class="cal"><?php echo $row['address']; ?></td>
                                 <td class="cal">
                                     <form action = "" method = "POST">
                                         <input type = "hidden" name = "id" value = "<?php echo $row['id'];?>"/>
-                                        <input type = "submit" button class="button buttonapprove" data-toggle="modal" data-target="#myModal" name = "approve" value = "View"/>
+                                        <input type = "submit" button class="button buttonview" data-toggle="modal" data-target="#myModal" name = "view" value = "View"/>
+                                        <input type = "submit" button class="button buttonapprove" data-toggle="modal" data-target="#myModal" name = "approve" value = "Edit"/>
                                         <input type = "submit" button class="button buttondeny" name = "deny" value = "Delete"/>
                                 </td>
                                 
@@ -370,6 +384,8 @@ window.history.forward();
                          </tbody>
                       </table>
                     </div>
+
+
                     <div id="myModal" class="modal fade" role="dialog">
                         <div class="modal-dialog">
 
